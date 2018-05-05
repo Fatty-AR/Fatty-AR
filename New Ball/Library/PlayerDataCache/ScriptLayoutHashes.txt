@@ -172,3 +172,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 69d7d01d14b2cb1bf7ea22ff94f3abfc Assembly-CSharp.dll:Vuforia.DefaultSmartTerrainEventHandler
 d2a2bd333db22f480a8589e167314ecc Assembly-CSharp.dll:Vuforia.UserDefinedTargetBuildingBehaviour
 7cac06ac0eaa7257b831c29e4455ce1b Assembly-CSharp.dll:Vuforia.VuforiaConfiguration
+cd0167d7ce4ff561cc6218371f7c3c68 Assembly-CSharp.dll:.CameraLogic
+7596e1d3ea7cab0498399338977e65e4 Assembly-CSharp.dll:.Demo
+7d68c2be12afca1d067d11b3f60bcb33 Assembly-CSharp.dll:.SimpleCharacterControl
