@@ -21,6 +21,7 @@ namespace UnityStandardAssets.Cameras
         private float m_LastFlatAngle; // The relative angle of the target and the rig from the previous frame.
         private float m_CurrentTurnAmount; // How much to turn the camera
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
+        private Vector3 targetposition;
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
 
 
@@ -85,7 +86,10 @@ namespace UnityStandardAssets.Cameras
             }
 
             // camera position moves towards target position:
-            transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
+            targetposition.x = m_Target.position.x;
+            targetposition.y = m_Target.position.y + 1;
+            targetposition.z = m_Target.position.z;
+            transform.position = Vector3.Lerp(transform.position, targetposition, deltaTime*m_MoveSpeed);
 
             // camera's rotation is split into two parts, which can have independend speed settings:
             // rotating towards the target's forward direction (which encompasses its 'yaw' and 'pitch')
