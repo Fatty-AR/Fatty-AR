@@ -90,6 +90,7 @@ namespace UnityStandardAssets.Cameras
             targetposition.x = m_Target.position.x;
             targetposition.y = m_Target.position.y + cameraheight;
             targetposition.z = m_Target.position.z;
+            targetposition = targetposition - targetForward;
             transform.position = Vector3.Lerp(transform.position, targetposition, deltaTime*m_MoveSpeed);
 
             // camera's rotation is split into two parts, which can have independend speed settings:

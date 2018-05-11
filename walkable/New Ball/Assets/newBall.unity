@@ -915,6 +915,23 @@ MeshCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: bf30d577eead1ef40bcf2b404289daf4, type: 2}
   m_PrefabInternal: {fileID: 1981112358}
+--- !u!114 &905599187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905599180}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b04ec3bda6b7747aa53936ef3b0ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipMoveTime: 0.05
+  returnTime: 0.4
+  sphereCastRadius: 0.1
+  visualiseInEditor: 0
+  closestDistance: 0.5
+  dontClipTag: Player
 --- !u!114 &905599190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,14 +946,15 @@ MonoBehaviour:
   m_Target: {fileID: 500346353}
   m_AutoTargetPlayer: 1
   m_UpdateType: 0
-  m_MoveSpeed: 3
-  m_TurnSpeed: 1
+  m_MoveSpeed: 200
+  m_TurnSpeed: 200
   m_RollSpeed: 0.2
   m_FollowVelocity: 0
   m_FollowTilt: 1
   m_SpinTurnLimit: 90
   m_TargetVelocityLowerLimit: 4
   m_SmoothTurnTime: 0.2
+  cameraheight: 0.2
 --- !u!1001 &952613623
 Prefab:
   m_ObjectHideFlags: 0
