@@ -16,7 +16,7 @@ public class blood : MonoBehaviour
     void Update()
     {
 		i++;
-		if (i % 20 == 0) {
+		if (i % 50 == 0) {
 			m_bar.size -= 0.01f;
 		}
     }

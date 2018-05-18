@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 18 20:12:42 CST 2018
+#Fri May 18 20:26:08 CST 2018
 76.base=E\:\\Git\\Fatty-AR\\3_new\\New Ball\\Temp\\gradleOut\\build\\intermediates\\assets\\release
 5.base=E\:\\Git\\Fatty-AR\\3_new\\New Ball\\Temp\\gradleOut\\build\\intermediates\\assets\\release
 86.base=E\:\\Git\\Fatty-AR\\3_new\\New Ball\\Temp\\gradleOut\\build\\intermediates\\assets\\release

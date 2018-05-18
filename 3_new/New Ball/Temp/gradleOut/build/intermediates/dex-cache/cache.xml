@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\libs\unity-classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="2d302418aa3482b8db770278260340aed47dd37a">
-        <dex dex="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\unity-classes_26c3b72738f37fee59c7935b5c324b9de44892b4.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\libs\VuforiaUnityPlayer.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
         <dex dex="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\VuforiaUnityPlayer_00b69c9f30427e195f098b071bee54234a60e8e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2d302418aa3482b8db770278260340aed47dd37a">
+        <dex dex="E:\Git\Fatty-AR\3_new\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\unity-classes_26c3b72738f37fee59c7935b5c324b9de44892b4.jar" />
     </item>
     <item
         is-multidex="false"
