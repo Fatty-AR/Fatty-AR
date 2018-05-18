@@ -10,7 +10,7 @@ public class button : MonoBehaviour {
 
     public void Click()
     {
-        if (mainCamera.activeInHierarchy)
+        if (mainCamera.GetComponent<Camera>().targetTexture == null)
         {
             mainCamera.GetComponent<Camera>().targetTexture = minimap;
             camera1.GetComponent<Camera>().targetTexture = null;

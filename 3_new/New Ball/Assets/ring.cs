@@ -16,9 +16,12 @@ public class ring : MonoBehaviour {
 	
 	public int targetProcess{ get; set;}
 	private float currentAmout = 0;
+
+	public GameObject circle;
 	
 	// Use this for initialization
 	void Start () {
+		currentAmout = 0;
 		targetProcess = 100;
 	}
 	
@@ -33,10 +36,13 @@ public class ring : MonoBehaviour {
 				currentAmout = targetProcess;
 			indicator.GetComponent<Text>().text = ((int)currentAmout).ToString() + "%";
 			process.GetComponent<Image>().fillAmount = currentAmout/100.0f;
+		} else {
+			currentAmout = 0;
+			circle.SetActive(false);
 		}
 		
 	}
-	
+
 	
 	public void SetTargetProcess(int target)
 	{
