@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEditor;
 using UnityEngine.UI;
 
 public class blood : MonoBehaviour
