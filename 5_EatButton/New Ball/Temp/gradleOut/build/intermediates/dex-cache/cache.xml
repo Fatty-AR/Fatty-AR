@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\4_gravity\New Ball\Temp\gradleOut\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2d302418aa3482b8db770278260340aed47dd37a">
+        <dex dex="E:\4_gravity\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\unity-classes_3925c38f99c16ab4eb9cc081501956ceba6519f3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\4_gravity\New Ball\Temp\gradleOut\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="be3db5d282d7094986c342631085ca4d84c02603">
+        <dex dex="E:\4_gravity\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\Vuforia_12f2006787452f77c356ecb5b8bba760bfddf345.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\4_gravity\New Ball\Temp\gradleOut\libs\VuforiaUnityPlayer.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95f5205a17a7546c265d4a27d1e6f8be7b6f3f03">
+        <dex dex="E:\4_gravity\New Ball\Temp\gradleOut\build\intermediates\pre-dexed\release\VuforiaUnityPlayer_8845e3aab784e608cb0d39adc2edcfcc1f018212.jar" />
+    </item>
+
+</items>
