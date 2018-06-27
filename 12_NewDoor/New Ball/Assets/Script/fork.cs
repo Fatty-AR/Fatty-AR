@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
+using UnityEngine;
 
 /*
  * fork position range:
@@ -11,6 +12,7 @@ public class fork : MonoBehaviour {
     public blood bloods;
     public Eat eat;
     public GameObject player;
+    public Image bloodscreen;
 
     private float interval;
     private float length;
@@ -23,6 +25,8 @@ public class fork : MonoBehaviour {
     void Start () {
         interval = 5.0f;
         length = 0.2f;
+
+        bloodscreen.gameObject.SetActive(false);
 
         TimeCount = interval;
         Invoke("hitRandomly", interval);
@@ -116,6 +120,7 @@ public class fork : MonoBehaviour {
         timer = new Timer(interval / 4);
         timer.OnUpdate += moveUp;
         timer.Start();
+        bloodscreen.gameObject.SetActive(false);
     }
 
     void moveUp()
@@ -129,6 +134,7 @@ public class fork : MonoBehaviour {
         {
             Debug.Log("HIT--------");
             bloods.minusBlood(0.2f);
+            bloodscreen.gameObject.SetActive(true);
         }
     }
 }
