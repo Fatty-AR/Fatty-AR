@@ -10,6 +10,7 @@ public class blood : MonoBehaviour
     public GameObject player;
 	private int i = 0;
     public UnityEngine.Canvas m_canvas;//画布  
+    public Vuforia.DefaultTrackableEventHandler targetScript;
 
     // Use this for initialization
     void Start()
@@ -20,29 +21,19 @@ public class blood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (mainCamera.GetComponent<Camera>().targetTexture == null) //全局视角
+        if (targetScript.start)
         {
-            //目标世界坐标转画布坐标  
-            Vector3 worldToScreenPoint = mainCamera.WorldToScreenPoint(player.transform.position);
-            //在画布上对应的点  
-            worldToScreenPoint = new Vector3(worldToScreenPoint.x, worldToScreenPoint.y, m_canvas.planeDistance);
-            Vector3 screenToWorldPoint = mainCamera.ScreenToWorldPoint(worldToScreenPoint);
-            //得到最终画布坐标系中的投影点  
-            Vector3 projPoint = m_canvas.transform.worldToLocalMatrix.MultiplyPoint(screenToWorldPoint);
-
-            this.transform.localPosition = projPoint;
-        } else {
-
-        }*/
-        i++;
-        if (i % 50 == 0)
-        {
-            m_bar.size -= 0.01f;
+            i++;
+            if (i % 50 == 0)
+            {
+                m_bar.size -= 0.01f;
+            }
+            if (m_bar.size == 0)
+            {
+                SceneManager.LoadScene("endgame");
+            }
         }
-        if (m_bar.size == 0)
-        {
-            SceneManager.LoadScene("endgame");
-        }
+        
     }
 
     public float getBlood()

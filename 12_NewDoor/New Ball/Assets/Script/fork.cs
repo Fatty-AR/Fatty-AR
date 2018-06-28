@@ -13,6 +13,7 @@ public class fork : MonoBehaviour {
     public Eat eat;
     public GameObject player;
     public Image bloodscreen;
+    public score scoreScript;
 
     private float interval;
     private float length;
@@ -46,11 +47,23 @@ public class fork : MonoBehaviour {
         //Debug.Log("interval = " + interval);
 
         // hit
-        Vector3 pos = hitPosition();
+        /*Vector3 pos = hitPosition();
         Vector3 up = new Vector3(pos.x, 10.5f, pos.z);
         transform.position = up;
         transform.Translate(Vector3.Normalize(pos - up) * (Vector3.Distance(up, pos) / (interval / 4 * Time.deltaTime)));
-        transform.Translate(Vector3.Normalize(up - pos) * (Vector3.Distance(pos, up) / (interval / 4 * Time.deltaTime)));
+        transform.Translate(Vector3.Normalize(up - pos) * (Vector3.Distance(pos, up) / (interval / 4 * Time.deltaTime)));*/
+
+        targetPos = hitPosition();
+        nowPos = new Vector3(targetPos.x, 10.5f, targetPos.z);
+        transform.position = nowPos;
+
+        Timer timer;
+        timer = new Timer(interval / 4);
+        timer.OnUpdate += move;
+        timer.OnEnd += moveUpStart;
+        timer.Start();
+
+        Debug.Log("done!!!");
 
         if (TimeCount >= hitTime)
         {
@@ -63,6 +76,7 @@ public class fork : MonoBehaviour {
             Invoke("hitRandomly", interval);
         }
     }
+
 
     Vector3 hitPosition()
     {
@@ -78,7 +92,7 @@ public class fork : MonoBehaviour {
         return new Vector3(x, 1.415f, z);
     }
 
-    void definitelyHit()
+    public void definitelyHit()
     {
         interval = (2.5f >= interval - (eat.GetPlayerSize() - 1) * 0.2f) ? 2.5f : interval - (eat.GetPlayerSize() - 1) * 0.2f;
         length = (0 >= length - (eat.GetPlayerSize() - 1) * 0.2f) ? 0 : length - (eat.GetPlayerSize() - 1) * 0.2f;
@@ -133,8 +147,9 @@ public class fork : MonoBehaviour {
         if (collider.tag == "Player")
         {
             Debug.Log("HIT--------");
-            bloods.minusBlood(0.2f);
+            //bloods.minusBlood(0.2f);
             bloodscreen.gameObject.SetActive(true);
+            scoreScript.minusScore(30);
         }
     }
 }

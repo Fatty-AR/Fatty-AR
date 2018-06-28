@@ -24,10 +24,11 @@ public class ring : MonoBehaviour {
     public GameObject circle;
     public GameObject doorPrefab;
     public Eat eatScript;
-    private ColorBlock cb;
     public Buffs buffScript;
     private bool canexit = false;
     private Transform handle;
+    private bool eating = false;
+    public score scoreScript;
 
     // Use this for initialization
     void Start () {
@@ -40,6 +41,7 @@ public class ring : MonoBehaviour {
 	void Update () {
 		
 		if (currentAmout < targetProcess) {
+            eating = true;
             controller.enabled = false;
             switchButton.interactable = false;
             //Debug.Log("currentAmount:" + currentAmout.ToString());
@@ -49,13 +51,11 @@ public class ring : MonoBehaviour {
 			indicator.GetComponent<Text>().text = ((int)currentAmout).ToString() + "%";
 			process.GetComponent<Image>().fillAmount = currentAmout/100.0f;
 		} else {
+            eating = false;
             satisfiedBar.size += 0.08f;
             healthBar.size += 0.05f;
             if (satisfiedBar.size >= 0.75f)
             {
-                cb = satisfiedBar.colors;
-                cb.normalColor = Color.red;
-                satisfiedBar.colors = cb;
                 if (canexit == false)
                 {
                     Vector3 exitposition;
@@ -119,6 +119,7 @@ public class ring : MonoBehaviour {
             process.GetComponent<Image>().fillAmount = 0;
             eatScript.SizeUp();
             AddBuff();
+            scoreScript.addScore(20);
         }
 		
 	}
@@ -138,5 +139,10 @@ public class ring : MonoBehaviour {
     public void SpeedUp()
     {
         speed += 0.2f;
+    }
+
+    public bool getIfEating()
+    {
+        return eating;
     }
 }

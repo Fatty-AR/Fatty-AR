@@ -9,6 +9,7 @@ public class SimpleCharacterControl : MonoBehaviour {
     public Scrollbar satisfiedBar, healthBar;
     public Button eatButton;
     public Buffs buffs;
+    public ring EatingProcessScript;
 
     private enum ControlMode
     {
@@ -126,7 +127,7 @@ public class SimpleCharacterControl : MonoBehaviour {
 
     private void TankUpdate()
     {
-        if (!m_isGrounded || buffs.GetIsFrozen()) return;
+        if (!m_isGrounded || buffs.GetIsFrozen()|| EatingProcessScript.getIfEating()) return;
         //float v = Input.GetAxis("Vertical");
         //float h = Input.GetAxis("Horizontal");
         //if (scroll.distance.x == 0 || scroll.distance.y == 0) return;

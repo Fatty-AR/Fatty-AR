@@ -9,7 +9,11 @@ public class Buffs : MonoBehaviour
     public Text state;
     public ring circleScript;
     private bool isFrozen = false;
-    private bool isInvincible = false;
+    private bool isInvincible = false;//无敌
+    private bool knowFork = false;
+    public attack_mark attack_mark_script;
+    public fork forkScript;
+    public score scoreScript;
 
     // Use this for initialization
     void Start()
@@ -27,11 +31,16 @@ public class Buffs : MonoBehaviour
     {
         Timer timer;
         int random = Random.Range(1, 9);
+        if (knowFork)
+        {
+            random = Random.Range(1, 8);
+        }
         switch (random) {
             case 1://五秒加速buff
                 state.text = "移动速度增加 持续10秒";
                 timer = new Timer(10f);
                 timer.OnStart += SpeedUp;
+                timer.OnStart += addScore;
                 timer.OnEnd += SpeedDown;
                 timer.OnEnd += clearText;
                 timer.Start();
@@ -45,6 +54,7 @@ public class Buffs : MonoBehaviour
                     state.text = "移动速度减缓 持续10秒";
                     timer = new Timer(10f);
                     timer.OnStart += SpeedDown;
+                    timer.OnStart += minusScore;
                     timer.OnEnd += SpeedUp;
                     timer.OnEnd += clearText;
                     timer.Start();
@@ -54,6 +64,7 @@ public class Buffs : MonoBehaviour
                 state.text = "原地冻结 持续5秒";
                 timer = new Timer(5f);
                 timer.OnStart += freeze;
+                timer.OnStart += minusScore;
                 timer.OnEnd += unfreeze;
                 timer.OnEnd += clearText;
                 timer.Start();
@@ -61,6 +72,7 @@ public class Buffs : MonoBehaviour
             case 4://血量掉30
                 timer = new Timer(3f);
                 timer.OnStart += hurt;
+                timer.OnStart += minusScore;
                 timer.OnEnd += clearText;
                 timer.Start();
                 break;
@@ -68,28 +80,40 @@ public class Buffs : MonoBehaviour
                 state.text = "血量上升10%";
                 timer = new Timer(3f);
                 timer.OnStart += heal;
+                timer.OnStart += addScore;
                 timer.OnEnd += clearText;
                 timer.Start();
                 break;
             case 6://叉子直接叉一下；
                 state.text = "幸运值降低，被叉子攻击了一下";
-                timer = new Timer(3f);
+                timer = new Timer(1.5f);
+                timer.OnStart += forkScript.definitelyHit;
+                timer.OnStart += minusScore;
                 timer.OnEnd += clearText;
                 break;
             case 7://10秒无敌状态
                 state.text = "进入10秒无敌状态";
                 timer = new Timer(10f);
+                timer.OnStart += invincible;
+                timer.OnStart += addScore;
+                timer.OnEnd += unInvincible;
                 timer.OnEnd += clearText;
                 break;
             case 8://吃速度加速；
                 state.text = "进食速度加快";
                 timer = new Timer(3f);
                 timer.OnStart += speedUpEat;
+                timer.OnStart += addScore;
                 timer.OnEnd += clearText;
                 break;
             case 9://获得叉子警报器一枚；
                 state.text = "幸运值上升，将预知叉子的攻击";
                 timer = new Timer(3f);
+                if (knowFork == false)
+                {
+                    timer.OnStart += knowForkBefore;
+                    timer.OnStart += addScore;
+                }
                 timer.OnEnd += clearText;
                 break;
 
@@ -162,8 +186,29 @@ public class Buffs : MonoBehaviour
         return isFrozen;
     }
 
+    void knowForkBefore()// 预知叉子攻击
+    {
+        knowFork = true;
+        attack_mark_script.SetNoticeBuff(true);
+    }
+
     public bool GetInvincible() //获取是否无敌状态
     {
         return isInvincible;
+    }
+
+    public bool GetIfKnowForkBefore()
+    {
+        return knowFork;
+    }
+
+    public void addScore()
+    {
+        scoreScript.addScore(10);
+    }
+
+    public void minusScore()
+    {
+        scoreScript.minusScore(10);
     }
 }

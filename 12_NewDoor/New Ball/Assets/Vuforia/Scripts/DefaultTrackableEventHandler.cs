@@ -14,16 +14,18 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+        public bool start = false;
+        public GameObject canvas;
         #region PRIVATE_MEMBER_VARIABLES
- 
+
         private TrackableBehaviour mTrackableBehaviour;
-    
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
-    
+
         void Start()
         {
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -70,7 +72,8 @@ namespace Vuforia
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
+            start = true;
+            canvas.SetActive(true);
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
             {
@@ -94,9 +97,10 @@ namespace Vuforia
 
         private void OnTrackingLost()
         {
+            start = false;
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
+            canvas.SetActive(false);
             // Disable rendering:
             foreach (Renderer component in rendererComponents)
             {

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Ball", "New Ball.csproj", "{FDC33636-3B05-E848-041E-ECD2C836AE4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Ball.Editor", "New Ball.Editor.csproj", "{CC92F1A2-2269-1E88-6F68-D6A894C80D9D}"

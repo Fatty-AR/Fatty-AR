@@ -16,9 +16,10 @@ a9ceaad7d51aada88335b5bf9c0e71a4 Assembly-CSharp.dll:Vuforia.ReconstructionBehav
 a7dac5bbf00bdbf95738d919f64b9e38 Assembly-CSharp.dll:.Eat
 57a6815572027869e23decb5efd8f26b Assembly-CSharp.dll:Vuforia.VirtualButtonBehaviour
 7596e1d3ea7cab0498399338977e65e4 Assembly-CSharp.dll:.Demo
-05984806ce834545347d068fdaac860d Assembly-CSharp.dll:.SimpleCharacterControl
+30b30e19a02de4334fad6f963b5cda8c Assembly-CSharp.dll:.SimpleCharacterControl
 0268caddfd80dcc5e7d4a0c4ba3adf40 Assembly-CSharp.dll:Vuforia.BackgroundPlaneBehaviour
 24fc33d2fc5ebf1966ff68a1f9a5217e Assembly-CSharp.dll:Vuforia.VuMarkBehaviour
+c2e190a1d4ede532fcbf678d403a657a Assembly-CSharp.dll:.fork
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.DefaultInitializationErrorHandler
 215f21c984a05428dd33c8419e0a1c57 Assembly-CSharp.dll:Vuforia.SurfaceBehaviour
 294bb1d117ca2191626d7b6cd35ed01d Assembly-CSharp.dll:.move
@@ -41,7 +42,7 @@ e62e8b2434201117e3e05fe707e46db8 Assembly-CSharp.dll:.ScrollCircle
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.DefaultTrackableEventHandler
 f67e4dccde37b3c42d067b6bf680c32e Assembly-CSharp.dll:Vuforia.TextRecoBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.playbuttonclick
-7f533d420d2a7acbb77303308edb0387 Assembly-CSharp.dll:.ring
+815c17482b986121ff33600a965018e4 Assembly-CSharp.dll:.ring
 342c9a27403d4f1a11164f989d99bd3f Assembly-CSharp.dll:Vuforia.CloudRecoBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Vuforia.VideoBackgroundBehaviour
 15bea26698002c6c4a3087131232ce5c Assembly-CSharp.dll:Vuforia.WordBehaviour
@@ -49,7 +50,7 @@ f67e4dccde37b3c42d067b6bf680c32e Assembly-CSharp.dll:Vuforia.TextRecoBehaviour
 69d7d01d14b2cb1bf7ea22ff94f3abfc Assembly-CSharp.dll:Vuforia.DefaultSmartTerrainEventHandler
 cd0167d7ce4ff561cc6218371f7c3c68 Assembly-CSharp.dll:.CameraLogic
 d2a2bd333db22f480a8589e167314ecc Assembly-CSharp.dll:Vuforia.UserDefinedTargetBuildingBehaviour
-bc671f334e1db864dafd097de3a63330 Assembly-CSharp.dll:.Buffs
+e918ed0786ea831e2c47d912a1acfd05 Assembly-CSharp.dll:.Buffs
 7cac06ac0eaa7257b831c29e4455ce1b Assembly-CSharp.dll:Vuforia.VuforiaConfiguration
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
