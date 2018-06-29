@@ -193,7 +193,7 @@ public class fork : MonoBehaviour
 
     void moveUpStart()
     {
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
         Timer timer;
         timer = new Timer(1.0f);
         timer.OnUpdate += moveUp;

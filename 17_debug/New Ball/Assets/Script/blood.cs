@@ -8,7 +8,8 @@ public class blood : MonoBehaviour
     //public Camera camera1;
     public Scrollbar m_bar;
     public GameObject player;
-	private int i = 0;
+    public Text score_text;
+    private int i = 0;
     public UnityEngine.Canvas m_canvas;//»­²¼  
     public Vuforia.DefaultTrackableEventHandler targetScript;
     private ColorBlock cb;
@@ -37,6 +38,8 @@ public class blood : MonoBehaviour
             }
             if (m_bar.size == 0)
             {
+                int score = score_text.GetComponent<score>().GetFinalScroe();
+                PlayerPrefs.SetInt("player score", score);
                 SceneManager.LoadScene("endgame");
             }
         }

@@ -357,6 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 59656768}
   player: {fileID: 1815417473}
+  score_text: {fileID: 607598103}
   m_canvas: {fileID: 280191352}
   targetScript: {fileID: 590663125}
 --- !u!1 &107625918
@@ -1256,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 0}
   player: {fileID: 0}
+  score_text: {fileID: 0}
   m_canvas: {fileID: 0}
   targetScript: {fileID: 0}
 --- !u!114 &441486602
@@ -2067,6 +2069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 0}
   player: {fileID: 0}
+  score_text: {fileID: 0}
   m_canvas: {fileID: 0}
   targetScript: {fileID: 0}
 --- !u!1 &735338383
@@ -3627,6 +3630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bar: {fileID: 1382002954}
   player: {fileID: 1815417473}
+  score_text: {fileID: 0}
   m_canvas: {fileID: 280191352}
   targetScript: {fileID: 590663125}
 --- !u!114 &1382002954

@@ -9,7 +9,9 @@ public class score : MonoBehaviour {
     // Use this for initialization
     void Start () {
         myScore = 0;
-	}
+        //DontDestroyOnLoad(score_text.gameObject);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
