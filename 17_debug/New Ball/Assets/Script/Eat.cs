@@ -29,7 +29,7 @@ public class Eat : MonoBehaviour {
         } else if (food.tag == "door")
         {
             Debug.Log("win");
-            SceneManager.LoadScene("endgame");
+            SceneManager.LoadScene("wingame");
         }
     }
 

@@ -132,11 +132,13 @@
     <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
+    <Compile Include="Assets\bloodscreenselfdestory.cs" />
     <Compile Include="Assets\finalscore.cs" />
     <Compile Include="Assets\followblood.cs" />
     <Compile Include="Assets\introbuttonclick.cs" />
     <Compile Include="Assets\returnbuttonclick.cs" />
     <Compile Include="Assets\sameblood.cs" />
+    <Compile Include="Assets\winscore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />

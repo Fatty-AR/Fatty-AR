@@ -34,7 +34,7 @@ public class fork : MonoBehaviour
         length = 3.0f;
         moving = false;
 
-        bloodscreen.gameObject.SetActive(false);
+        //bloodscreen.gameObject.SetActive(false);
         bloodscreen.transform.SetAsFirstSibling();
 
         TimeCount = interval;
@@ -211,7 +211,8 @@ public class fork : MonoBehaviour
         {
             Debug.Log("HIT--------");
             bloods.minusBlood(0.1f);
-            bloodscreen.gameObject.SetActive(true);
+            //bloodscreen.gameObject.SetActive(true);
+            bloodscreen.GetComponent<bloodscreenselfdestory>().behit();
             scoreScript.minusScore(30);
         }
     }

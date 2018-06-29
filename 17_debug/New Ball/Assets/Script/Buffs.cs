@@ -168,7 +168,8 @@ public class Buffs : MonoBehaviour
         } else
         {
             state.text = "食物中毒，血量骤减20%";
-            bloodscreen.gameObject.SetActive(true);
+            //bloodscreen.gameObject.SetActive(true);
+            bloodscreen.GetComponent<bloodscreenselfdestory>().behit();
             bloods.minusBlood(0.2f);
             minusScore();
         }
@@ -233,6 +234,7 @@ public class Buffs : MonoBehaviour
     void attackedByFork()
     {
         bloods.minusBlood(0.1f);
-        bloodscreen.gameObject.SetActive(true);
+        //bloodscreen.gameObject.SetActive(true);
+        bloodscreen.GetComponent<bloodscreenselfdestory>().behit();
     }
 }

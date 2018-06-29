@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 107625919}
   - component: {fileID: 107625921}
   - component: {fileID: 107625920}
+  - component: {fileID: 107625922}
   m_Layer: 5
   m_Name: bloodscreen
   m_TagString: Untagged
@@ -428,6 +429,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 107625918}
+--- !u!114 &107625922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107625918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bfab0e8d2aa4743bb2a3627118545f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodscreen: {fileID: 107625920}
+  trans: {fileID: 21300000, guid: 91f22769ddab9ef43836b325303ab928, type: 3}
+  blood: {fileID: 21300000, guid: f446eecb17fffed46b32f85b2dff6675, type: 3}
 --- !u!1 &111741958 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: dc173a4e482374388a45c43e5a21e656, type: 3}
