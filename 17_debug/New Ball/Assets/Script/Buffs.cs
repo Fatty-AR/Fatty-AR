@@ -15,10 +15,14 @@ public class Buffs : MonoBehaviour
     public attack_mark attack_mark_script;
     public fork forkScript;
     public score scoreScript;
+    public AudioSource buffSource;
+    public AudioClip hurt_sound;
+    public AudioClip freeze_sound;
 
     // Use this for initialization
     void Start()
     {
+        //buffSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,10 +34,10 @@ public class Buffs : MonoBehaviour
     public void doBuff()
     {
         Timer timer;
-        int random = Random.Range(1, 9);
+        int random = Random.Range(1, 10);
         if (knowFork)
         {
-            random = Random.Range(1, 8);
+            random = Random.Range(1, 9);
         }
         switch (random) {
             case 1://五秒加速buff
@@ -132,6 +136,8 @@ public class Buffs : MonoBehaviour
                 timer.OnEnd += clearText;
                 timer.Start();
                 break;
+            default:
+                break;
 
         }
     }
@@ -152,6 +158,8 @@ public class Buffs : MonoBehaviour
 
     void freeze()
     {
+        buffSource.clip = freeze_sound;
+        buffSource.Play();
         isFrozen = true;
     }
 
@@ -167,6 +175,8 @@ public class Buffs : MonoBehaviour
             state.text = "无敌状态中，食物中毒失效";
         } else
         {
+            buffSource.clip = hurt_sound;
+            buffSource.Play();
             state.text = "食物中毒，血量骤减20%";
             //bloodscreen.gameObject.SetActive(true);
             bloodscreen.GetComponent<bloodscreenselfdestory>().behit();
@@ -233,6 +243,8 @@ public class Buffs : MonoBehaviour
 
     void attackedByFork()
     {
+        buffSource.clip = hurt_sound;
+        buffSource.Play();
         bloods.minusBlood(0.1f);
         //bloodscreen.gameObject.SetActive(true);
         bloodscreen.GetComponent<bloodscreenselfdestory>().behit();

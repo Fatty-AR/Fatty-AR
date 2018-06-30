@@ -165,7 +165,7 @@ public class SimpleCharacterControl : MonoBehaviour {
         }
         else
         {
-            transform.position += (new Vector3(h, 0, v)) * m_moveSpeed * Time.deltaTime;
+            transform.position += (new Vector3(h, 0, v)) * m_moveSpeed * 1.2f * Time.deltaTime;
             //transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
             transform.LookAt(transform.position + (new Vector3(h, 0, v)));
         }

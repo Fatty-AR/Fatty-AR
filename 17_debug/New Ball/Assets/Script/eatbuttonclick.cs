@@ -8,11 +8,15 @@ public class eatbuttonclick : MonoBehaviour {
     private Button thisButton;
     private string eatableName = "", lastAteFood = "null";
     public Eat eatScript;
+    private ColorBlock cb;
 
     void Start () {
         thisButton = this.GetComponent<Button> ();
         thisButton.onClick.AddListener (OnClick);
         thisButton.interactable = false;
+        cb = thisButton.colors;
+        cb.normalColor = Color.cyan;
+        thisButton.colors = cb;
     }
 
     private void OnClick(){

@@ -9,6 +9,7 @@ public class followblood : MonoBehaviour {
     public GameObject bloodslider;
     public GameObject satisslider;
     public GameObject text;
+    public GameObject text1;
     public GameObject posi;
 
     public float Xoffset;
@@ -24,21 +25,22 @@ public class followblood : MonoBehaviour {
         if(switchbutton.GetComponent<button>().firstPerson == true)
         {
             text.SetActive(true);
+            text1.SetActive(true);
             bloodslider.GetComponent<RectTransform>().sizeDelta = new Vector2(200.0f, 20.0f);
             satisslider.GetComponent<RectTransform>().sizeDelta = new Vector2(200.0f, 20.0f);
 
             bloodslider.transform.position = posi.transform.position;
-            satisslider.transform.position = posi.transform.position + new Vector3(0.0f, -45.0f);
+            satisslider.transform.position = posi.transform.position + new Vector3(0.0f, -65.0f);
         } else
         {
             text.SetActive(false);
-
-            bloodslider.GetComponent<RectTransform>().sizeDelta = new Vector2(30.0f, 3.0f);
-            satisslider.GetComponent<RectTransform>().sizeDelta = new Vector2(30.0f, 3.0f);
+            text1.SetActive(false);
+            bloodslider.GetComponent<RectTransform>().sizeDelta = new Vector2(70.0f, 7.0f);
+            satisslider.GetComponent<RectTransform>().sizeDelta = new Vector2(70.0f, 7.0f);
 
             Vector2 player2DPosition = Camera.main.WorldToScreenPoint(player.transform.position);
-            bloodslider.transform.position = player2DPosition + new Vector2(Xoffset, Yoffset);
-            satisslider.transform.position = player2DPosition + new Vector2(Xoffset, Yoffset + 4);
+            satisslider.transform.position = player2DPosition + new Vector2(Xoffset, Yoffset);
+            bloodslider.transform.position = player2DPosition + new Vector2(Xoffset, Yoffset + 14);
 
             //血条超出屏幕就不显示  
             if (player2DPosition.x > Screen.width || player2DPosition.x < 0 || player2DPosition.y > Screen.height || player2DPosition.y < 0)

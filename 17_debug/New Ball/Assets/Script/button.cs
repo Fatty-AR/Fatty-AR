@@ -10,14 +10,17 @@ public class button : MonoBehaviour {
     public RenderTexture minimap;
 	public bool firstPerson;
 	public GameObject scroll;
+    private AudioSource switchSource;
 
     public void Start() {
+        switchSource = GetComponent<AudioSource>();
         firstPerson = false;
         scroll.SetActive(false);
     }
 
     public void Click()
     {
+        switchSource.Play();
         if (mainCamera.GetComponent<Camera>().targetTexture == null)
         {
             scroll.SetActive(true);

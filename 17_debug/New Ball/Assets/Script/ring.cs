@@ -29,11 +29,14 @@ public class ring : MonoBehaviour {
     private Transform handle;
     private bool eating = false;
     public score scoreScript;
+    public AudioSource eatSource;
 
     // Use this for initialization
     void Start () {
-		currentAmout = 0;
-		targetProcess = 100;
+        //eatSource = GetComponent<AudioSource>();
+        currentAmout = 0;
+        process.GetComponent<Image>().fillAmount = 0;
+        targetProcess = 100;
         handle = satisfiedBar.transform.Find("Sliding Area/Handle");
     }
 	
@@ -41,6 +44,11 @@ public class ring : MonoBehaviour {
 	void Update () {
 		
 		if (currentAmout < targetProcess) {
+            if (currentAmout == 0)
+            {
+                eatSource.loop = true;
+                eatSource.Play();
+            }
             eating = true;
             controller.enabled = false;
             switchButton.interactable = false;
@@ -50,7 +58,9 @@ public class ring : MonoBehaviour {
 				currentAmout = targetProcess;
 			indicator.GetComponent<Text>().text = ((int)currentAmout).ToString() + "%";
 			process.GetComponent<Image>().fillAmount = currentAmout/100.0f;
-		} else {
+
+        } else {
+            eatSource.Stop();
             eating = false;
             satisfiedBar.size += 0.08f;
             healthBar.size += 0.05f;

@@ -40,6 +40,17 @@ public class blood : MonoBehaviour
             {
                 int score = score_text.GetComponent<score>().GetFinalScroe();
                 PlayerPrefs.SetInt("player score", score);
+                if (PlayerPrefs.HasKey("highestScore"))
+                {
+                    int temp = PlayerPrefs.GetInt("highestScore");
+                    if (temp < score)
+                    {
+                        PlayerPrefs.SetInt("highestScore", score);
+                    }
+                } else
+                {
+                    PlayerPrefs.SetInt("highestScore", score);
+                }
                 SceneManager.LoadScene("endgame");
             }
         }

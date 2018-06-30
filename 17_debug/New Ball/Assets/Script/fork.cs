@@ -26,10 +26,12 @@ public class fork : MonoBehaviour
     private Vector3 targetPos;
     private bool moving = false;
     private string parameter;
+    public AudioSource hurtSource;
 
     // Use this for initialization
     void Start()
     {
+        //hurtSource = GetComponent<AudioSource>();
         interval = 8.0f;
         length = 3.0f;
         moving = false;
@@ -42,7 +44,7 @@ public class fork : MonoBehaviour
         {
             //Debug.Log("true!!!");
             parameter = "hitRandomly";
-            Invoke("markFlash", interval - 1.5f);
+            Invoke("markFlash", interval - 0.5f);
         } else
         {
             Invoke("hitRandomly", interval);
@@ -62,8 +64,8 @@ public class fork : MonoBehaviour
         if (moving) return;
         moving = true;
         //Vector3 
-        interval = (2.5f >= interval - (eat.GetPlayerSize() - 1) * 0.2f) ? 2.5f : interval - (eat.GetPlayerSize() - 1) * 0.2f;
-        length = (0 >= length - (eat.GetPlayerSize() - 1) * 0.2f) ? 0 : length - (eat.GetPlayerSize() - 1) * 0.2f;
+        interval = (2.5f >= interval - (eat.GetPlayerSize() - 1) * 0.1f) ? 2.5f : interval - (eat.GetPlayerSize() - 1) * 0.1f;
+        length = (0 >= length - (eat.GetPlayerSize() - 1) * 0.1f) ? 0 : length - (eat.GetPlayerSize() - 1) * 0.1f;
         //Debug.Log("interval = " + interval);
 
         // hit
@@ -94,7 +96,7 @@ public class fork : MonoBehaviour
             {
                 //Debug.Log("true!!!");
                 parameter = "definitelyHit";
-                Invoke("markFlash", interval - 1.5f);
+                Invoke("markFlash", interval - 0.5f);
             }
             else
             {
@@ -108,7 +110,7 @@ public class fork : MonoBehaviour
             {
                 //Debug.Log("true!!!");
                 parameter = "hitRandomly";
-                Invoke("markFlash", interval - 1.5f);
+                Invoke("markFlash", interval - 0.5f);
             }
             else
             {
@@ -137,8 +139,8 @@ public class fork : MonoBehaviour
     {
         if (moving) return;
         moving = true;
-        interval = (2.5f >= interval - (eat.GetPlayerSize() - 1) * 0.2f) ? 2.5f : interval - (eat.GetPlayerSize() - 1) * 0.2f;
-        length = (0 >= length - (eat.GetPlayerSize() - 1) * 0.2f) ? 0 : length - (eat.GetPlayerSize() - 1) * 0.2f;
+        interval = (2.5f >= interval - (eat.GetPlayerSize() - 1) * 0.1f) ? 2.5f : interval - (eat.GetPlayerSize() - 1) * 0.1f;
+        length = (0 >= length - (eat.GetPlayerSize() - 1) * 0.1f) ? 0 : length - (eat.GetPlayerSize() - 1) * 0.1f;
 
         targetPos = new Vector3(player.GetComponent<Transform>().position.x, 1.415f, player.GetComponent<Transform>().position.z);
         nowPos = new Vector3(targetPos.x, 10.5f, targetPos.z);
@@ -162,7 +164,7 @@ public class fork : MonoBehaviour
             {
                 //Debug.Log("true!!!");
                 parameter = "definitelyHit";
-                Invoke("markFlash", interval - 1.5f);
+                Invoke("markFlash", interval - 0.5f);
             }
             else
             {
@@ -176,7 +178,7 @@ public class fork : MonoBehaviour
             {
                 //Debug.Log("true!!!");
                 parameter = "hitRandomly";
-                Invoke("markFlash", interval - 1.5f);
+                Invoke("markFlash", interval - 0.5f);
             }
             else
             {
@@ -210,6 +212,7 @@ public class fork : MonoBehaviour
         if (collider.tag == "Player" && !buff.GetInvincible())
         {
             Debug.Log("HIT--------");
+            hurtSource.Play();
             bloods.minusBlood(0.1f);
             //bloodscreen.gameObject.SetActive(true);
             bloodscreen.GetComponent<bloodscreenselfdestory>().behit();
@@ -221,7 +224,7 @@ public class fork : MonoBehaviour
     {
         //Debug.Log("mark--------");
         am.MarkFlash();
-        Invoke(parameter, 1.5f);
+        Invoke(parameter, 0.5f);
     }
 
     void disableMark()

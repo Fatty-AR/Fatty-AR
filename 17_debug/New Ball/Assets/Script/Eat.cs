@@ -9,6 +9,7 @@ public class Eat : MonoBehaviour {
     private string LastEatFood = "";
     public eatbuttonclick buttonScript;
     private int playerSize;
+    public Text score_text;
     private Timer timer;
     // Use this for initialization
     void Start () {
@@ -29,6 +30,20 @@ public class Eat : MonoBehaviour {
         } else if (food.tag == "door")
         {
             Debug.Log("win");
+            int score = score_text.GetComponent<score>().GetFinalScroe();
+            PlayerPrefs.SetInt("player score", score + 100);
+            if (PlayerPrefs.HasKey("highestScore"))
+            {
+                int temp = PlayerPrefs.GetInt("highestScore");
+                if (temp < score + 100)
+                {
+                    PlayerPrefs.SetInt("highestScore", score + 100);
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("highestScore", score + 100);
+            }
             SceneManager.LoadScene("wingame");
         }
     }
